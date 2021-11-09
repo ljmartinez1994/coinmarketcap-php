@@ -22,6 +22,8 @@ class Api
     private static $tools = null;
     private static $partners = null;
     private static $fiat = null;
+    private static $exchange = null;
+    private static $key = null;
     /**
      * Api constructor.
      * @param string $apiKey
@@ -38,6 +40,24 @@ class Api
     {
         self::$fiat = self::$fiat ?: new Fiat(self::$apiKey);
         return self::$fiat;
+    }
+
+    /**
+     * @return Key
+     */
+    public static function key(): Key
+    {
+        self::$key = self::$key ?: new Key(self::$apiKey);
+        return self::$key;
+    }
+
+    /**
+     * @return Exchange
+     */
+    public static function exchange(): Exchange
+    {
+        self::$exchange = self::$exchange ?: new Exchange (self::$apiKey);
+        return self::$exchange;
     }
 
     /**
