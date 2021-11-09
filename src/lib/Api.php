@@ -21,7 +21,7 @@ class Api
     private static $globalMetrics = null;
     private static $tools = null;
     private static $partners = null;
-
+    private static $fiat = null;
     /**
      * Api constructor.
      * @param string $apiKey
@@ -29,6 +29,15 @@ class Api
     public function __construct($apiKey)
     {
         self::$apiKey = $apiKey;
+    }
+
+    /**
+     * @return Fiat
+     */
+    public static function fiat(): Fiat
+    {
+        self::$fiat = self::$fiat ?: new Fiat(self::$apiKey);
+        return self::$fiat;
     }
 
     /**
