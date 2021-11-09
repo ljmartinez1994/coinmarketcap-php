@@ -72,4 +72,14 @@ class Cryptocurrency extends ApiRequest
     {
         return $this->get('categories', $params);
     }
+
+    /**
+     * @param array $params ["id", "start", "limit", "convert", "convert_id"]
+     * @return mixed
+     * @throws \Exception
+     */
+    public function category($params = [])
+    {
+        return $this->get('category', $params);
+    }
 }
