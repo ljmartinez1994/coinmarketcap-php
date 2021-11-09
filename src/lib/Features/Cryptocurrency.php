@@ -62,4 +62,14 @@ class Cryptocurrency extends ApiRequest
     {
         return $this->get('quotes/latest', $params);
     }
+
+    /**
+     * @param array $params ["start", "limit", "id", "slug", "symbol"]
+     * @return mixed
+     * @throws \Exception
+     */
+    public function categories($params = [])
+    {
+        return $this->get('categories', $params);
+    }
 }
