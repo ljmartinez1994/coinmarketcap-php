@@ -15,7 +15,7 @@ class Fiat extends ApiRequest
 {
 
     /**
-     * Cryptocurrency constructor.
+     * Fiat constructor.
      * @param string $apiKey
      */
     public function __construct($apiKey)
